@@ -205,3 +205,187 @@ main ul {
         text-align: center;
     }
 }
+/*Definiçoes globais da página*/
+:root {
+    --cor-primaria: #2E8B57;  
+    --cor-fundo: #FAFAFA;      
+    --cor-texto: #2F4F4F;     
+    --cor-branco: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+/* Navegação com efeito 'sticky' para fixar no topo durante a rolagem. */
+nav {
+    background-color: #333;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Layout do menu principal utilizando Flexbox para alinhamento horizontal. */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    display: block;
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: 15px 20px;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: var(--cor-primaria);
+}
+
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+/* Estilo "Card" para as seções, criando blocos de conteúdo visualmente distintos. */
+section {
+    background-color: var(--cor-branco);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+main h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+main h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+main p, main ul {
+    margin-bottom: 15px;
+}
+
+main ul {
+    list-style-position: inside;
+    padding-left: 15px;
+}
+
+/* Layout responsivo do portfólio utilizando CSS Grid. */
+#portfolio .portfolio-grid {
+    display: grid;
+    /* As colunas se ajustam automaticamente ao tamanho da tela (min: 300px). */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+#portfolio .projeto-item {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#portfolio .projeto-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#portfolio img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Permite que todo o card do projeto funcione como um link. */
+#portfolio .projeto-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#portfolio .projeto-item p {
+    flex-grow: 1;
+}
+
+#contato label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contato input[type="text"],
+#contato input[type="email"],
+#contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Efeito de foco para melhor experiência do usuário (UX). */
+#contato input:focus,
+#contato textarea:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 5px rgba(10, 77, 149, 0.5);
+}
+
+#contato button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contato button:hover {
+    background-color: #083b70;
+}
