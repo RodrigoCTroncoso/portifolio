@@ -1,9 +1,10 @@
 /*Definiçoes globais da página*/
+
 :root {
-    --cor-primaria: #2E8B57;  
-    --cor-fundo: #FAFAFA;      
-    --cor-texto: #2F4F4F;     
-    --cor-branco: #ffffff;
+    --cor-primaria: #2E8B57;      /* Verde (mantido para a identidade) */
+    --cor-fundo: #121212;         /* Fundo de carvão (muito escuro) */
+    --cor-texto: #cccccc;        /* Texto cinza claro (fácil de ler) */
+    --cor-branco: #1E1E1E;        /* Cor dos 'cards' (cinza um pouco mais claro que o fundo) */
 }
 
 * {
@@ -69,20 +70,22 @@ main {
     padding: 0 20px;
 }
 
-/* Estilo "Card" para as seções, criando blocos de conteúdo visualmente distintos. */
+/* Estilo "Card" para o modo escuro */
 section {
     background-color: var(--cor-branco);
     padding: 25px;
     margin-bottom: 25px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #333333; /* Borda sutil para o modo escuro */
+    box-shadow: none; /* Sombra não é mais necessária */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 main h2 {
     color: var(--cor-primaria);
     margin-bottom: 20px;
     padding-bottom: 10px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #333333; /* Borda que combina com a do card */
 }
 
 main h3 {
@@ -99,12 +102,12 @@ main ul {
     padding-left: 15px;
 }
 
-/* Layout responsivo do portfólio utilizando CSS Grid. */
-#portfolio .portfolio-grid {
-    display: grid;
-    /* As colunas se ajustam automaticamente ao tamanho da tela (min: 300px). */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
+#portfolio .projeto-item {
+    background-color: #2a2a2a; /* Fundo do card do portfólio um pouco diferente */
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 #portfolio .projeto-item {
@@ -205,13 +208,6 @@ main ul {
         text-align: center;
     }
 }
-/*Definiçoes globais da página*/
-:root {
-    --cor-primaria: #2E8B57;  
-    --cor-fundo: #FAFAFA;      
-    --cor-texto: #2F4F4F;     
-    --cor-branco: #ffffff;
-}
 
 * {
     box-sizing: border-box;
@@ -388,4 +384,23 @@ main ul {
 
 #contato button:hover {
     background-color: #083b70;
+}
+
+/* Aula 3: Estiliza a cor de fundo da seleção de texto */
+::selection {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+}
+
+/* ==== AJUSTES FINAIS DE CONTRASTE ==== */
+
+/* 1. Deixa o texto do cabeçalho e do menu branco puro */
+header,
+nav a {
+    color: #ffffff;
+}
+
+/* 2. Força o texto dentro dos cards do portfólio a ser escuro */
+#portfolio .projeto-item {
+    color: #333333;
 }
