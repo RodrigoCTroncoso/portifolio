@@ -182,3 +182,26 @@ main ul {
 #contato button:hover {
     background-color: #083b70;
 }
+
+/* ==== ESTILOS DA SEÇÃO SOBRE MIM ==== */
+
+#sobre .sobre-container {
+    display: flex; /* Usa Flexbox para alinhar os itens lado a lado */
+    align-items: center; /* Alinha a foto e o texto verticalmente */
+    gap: 30px; /* Cria um espaço de 30px entre a foto e o texto */
+}
+
+#sobre .sobre-foto img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Deixa a imagem perfeitamente redonda */
+    object-fit: cover; /* Garante que a foto preencha o círculo sem distorcer */
+}
+
+/* Deixa o layout responsivo em telas menores */
+@media (max-width: 768px) {
+    #sobre .sobre-container {
+        flex-direction: column; /* Empilha a foto sobre o texto em celulares */
+        text-align: center;
+    }
+}
